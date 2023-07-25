@@ -10,7 +10,7 @@ It is best to declare a shell function inside your favorite shell (`.bashrc` or 
 
 ```
 function volatility() {
-  docker run --rm --user=$(id -u):$(id -g) -v "$(pwd)":/dumps:ro,Z -ti ebsd/volatility $@
+  docker run --rm --user=$(id -u):$(id -g) -v "$(pwd)":/dumps:rw,Z -ti ebsd/volatility $@
 }
 ```
 
