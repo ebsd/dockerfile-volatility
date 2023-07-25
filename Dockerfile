@@ -2,7 +2,7 @@ FROM ubuntu:bionic
 LABEL maintainer "jc@phocean.net"
 
 RUN apt-get update \
-  && apt-get install -y git python python-distorm3 python-crypto \
+  && apt-get install -y wget git python python-distorm3 python-crypto \
   && adduser --disabled-login --system --no-create-home vol \
   && git clone https://github.com/volatilityfoundation/volatility.git \
   && chown -R vol /volatility \
@@ -11,6 +11,8 @@ RUN apt-get update \
   && apt-get -y autoremove \
   && apt-get -y clean \
   && rm -rf /var/lib/apt/lists/*
+
+RUN wget https://raw.githubusercontent.com/breppo/Volatility-BitLocker/master/bitlocker.py -O /volatility/volatility/plugins/bitlocker.py
   
 VOLUME /dumps
 

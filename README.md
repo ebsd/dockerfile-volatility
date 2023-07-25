@@ -10,7 +10,7 @@ It is best to declare a shell function inside your favorite shell (`.bashrc` or 
 
 ```
 function volatility() {
-  docker run --rm --user=$(id -u):$(id -g) -v "$(pwd)":/dumps:ro,Z -ti phocean/volatility $@
+  docker run --rm --user=$(id -u):$(id -g) -v "$(pwd)":/dumps:ro,Z -ti ebsd/volatility $@
 }
 ```
 
@@ -25,6 +25,6 @@ Then, you can simply use it as follows:
 You can build the image locally with:
 
 ```
-docker build -t phocean/volatility .
+docker build -t ebsd/volatility .
 ```
 
