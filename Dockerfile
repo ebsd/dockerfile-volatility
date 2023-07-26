@@ -2,7 +2,7 @@ FROM ubuntu:bionic
 LABEL maintainer "jc@phocean.net"
 
 RUN apt-get update \
-  && apt-get install -y wget git python python-distorm3 python-crypto \
+  && apt-get install -y wget git python python-distorm3 python-crypto python-yara \
   && adduser --disabled-login --system --no-create-home vol \
   && git clone https://github.com/volatilityfoundation/volatility.git \
   && chown -R vol /volatility \
